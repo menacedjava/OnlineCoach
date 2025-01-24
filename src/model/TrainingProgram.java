@@ -68,6 +68,19 @@ public class TrainingProgram {
     public void setDifficultyLevel(String difficultyLevel) {
         this.difficultyLevel = difficultyLevel;
     }
+
+    @Override
+    public String toString() {
+        return "TrainingProgram{" +
+                "programId=" + programId +
+                ", coachId=" + coachId +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", duration=" + duration +
+                ", difficultyLevel='" + difficultyLevel + '\'' +
+                '}';
+    }
+
 }
 
 
