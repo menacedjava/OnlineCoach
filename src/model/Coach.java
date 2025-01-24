@@ -11,5 +11,5 @@ public class Coach extends User {
         this.experienceYears = experienceYears;
         this.rating = rating;
     }
-
+    
 }
