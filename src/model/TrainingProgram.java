@@ -18,6 +18,8 @@ public class TrainingProgram {
         this.difficultyLevel = difficultyLevel;
     }
 
+    public TrainingProgram() {
+    }
 }
 
 
