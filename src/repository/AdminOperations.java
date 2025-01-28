@@ -14,4 +14,5 @@ public interface AdminOperations {
     String updateAdmin(Integer id, Admin admin);
 
     String deleteAdmin(Integer id);
+    String login(String username, String password);
 }

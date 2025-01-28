@@ -2,12 +2,15 @@ package service;
 
 import model.Admin;
 import repository.AdminOperations;
+import utils.Result;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class AdminService implements AdminOperations {
     private final List<Admin> adminDatabase = new ArrayList<>();
+
     @Override
     public String createAdmin(Admin admin) {
         if (admin.getUsername() == null || admin.getPassword() == null || admin.getEmail() == null) {
@@ -53,4 +56,14 @@ public class AdminService implements AdminOperations {
         return adminDatabase.removeIf(admin -> admin.getId().equals(id)) ?
                 "Admin successfully deleted!" : "Admin not found!";
     }
+
+    @Override
+    public String login(String username, String password) {
+        Optional<Admin> admin = adminDatabase.stream()
+                .filter(a -> a.getUsername().equals(username) && a.getPassword().equals(password))
+                .findFirst();
+
+        return admin.isPresent() ? "Login successful!" : "Invalid username or password!";
+    }
+
 }
