@@ -3,6 +3,8 @@ package controller;
 import model.Course;
 import service.CourseService;
 
+import java.util.List;
+
 public class CourseController {
     private final CourseService courseService;
 
@@ -21,5 +23,20 @@ public class CourseController {
             System.out.println("Course not found!");
         }
     }
+    public void getAllCourses() {
+        List<Course> courses = courseService.getAllCourses();
+        courses.forEach(System.out::println);
+    }
+
+    public void updateCourse(Integer id, Course updatedCourse) {
+        String result = courseService.updateCourse(id, updatedCourse);
+        System.out.println(result);
+    }
+
+    public void deleteCourse(Integer id) {
+        String result = courseService.deleteCourse(id);
+        System.out.println(result);
+    }
+
 
 }
