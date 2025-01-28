@@ -4,6 +4,8 @@ import model.Admin;
 import service.AdminService;
 import utils.Result;
 
+import java.util.List;
+
 public class AdminController {
     private final AdminService adminService;
 
@@ -14,5 +16,10 @@ public class AdminController {
         String admin1 = adminService.createAdmin(admin);
         return new Result(true, admin1);
     }
+    public List<Admin> getAllAdmins() {
+        return adminService.getAllAdmins();
+    }
+
+
 
 }
